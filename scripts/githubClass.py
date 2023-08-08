@@ -1,8 +1,5 @@
 from openai_function_call import OpenAISchema
 from pydantic import Field
-import tiktoken
-
-ENCODER = tiktoken.encoding_for_model('gpt-3.5-turbo-0613')
 
 class githubProject(OpenAISchema):
     "Correctly extracted information from the html of a github project"
@@ -16,4 +13,3 @@ class projectList(OpenAISchema):
     projects: list[githubProject]
 
 
-# print(len(ENCODER.encode(str(githubProject.openai_schema))))
